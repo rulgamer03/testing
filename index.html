@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raul Chavez</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+    <header class="hero">
+        <nav class="nav__hero">
+            <div class="container nav__container">
+                <div class="logo"></div>
+                    <h2 class="logo__name">Raúl Chávez</h2>
+                <div class="links">
+                    <a href="#" class="link">Home</a>
+                    <a href="#" class="link">Teaching</a>
+                    <a href="#" class="link">Class</a>
+                    <a href="index.html" class="link link--active">ANSI C Exercises</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2 class="subtitle">ANSI C Exercises</h2>
+        </div>
+    </section>
+
+    <section class = "table">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        Logged in with e-mail example@example.com.</br>Log out.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <div class="container">
+            These exercises are structured according to the seminal textbook of Brian W. Kernighan and Dennis M. Ritchie: The C Programming Language, second edition, published in 1988. The sections correspond to the book chapters.
+        </br></br>
+            The students are expected to always read the corresponding book chapter before attempting to carry out the exercises. Should there be any doubts regarding the chapter contents, attend class in person to consult with the teacher. You should be advancing approximately one chapter every one or two weeks; the earlier you finish the book, the more time you will have to work on your final project. You are expected to have covered the first half, Chapters 1–4 before taking the midterm exam, and the latter half, Chapters 5–8, before taking the final exam, but you may of course proceed faster than that. Going slower would be a very poor idea with potentially dire consequences. Attend class to seek help from the professor whenever you have trouble understanding the book. She learnt to program reading that very same book almost twenty years ago and has kept the book close at hand ever since.
+        </br></br>
+            The only supported compilers are variants of gcc. The libraries permitted are those mentioned in the book. The recommended text editor is emacs (downloads available at GNU FTP server, for example). Difficulties arising from the use of some other tools will not be attended by the professor. For Windows users, the installation of either PowerShell or a virtual machine with Linux is recommended.
+        </br></br>
+            You are welcome and encouraged to work on the assignments during class hours. That way you will not be alone with your doubts and compiler errors.
+        </div>
+    </section>
+
+    <section class = "table">
+        <table>
+            <thead>
+            <tr>
+                <th>Chapters</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    A Tutorial Introduction</br></br>
+                    1) Types, Operators, and Expressions</br>
+                    2) Control Flow</br>
+                    3) Functions and Program Structure</br>
+                    4) Pointers and Arrays</br>
+                    5) Structures</br>
+                    6) Input and Output</br>
+                    7) The UNIX System Interface</br>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </section>
+
+
+    <section class = "table">
+        <table>
+            <thead>
+            <tr>
+                <th>Exercises</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    You have in total 21 points from the 7 exercises you have submitted. Your present score is 100 percent of the total score available. For each exercise, your present score is shown.</br>
+                    </br>Exercise 1 (3 pts)</br>
+                    Exercise 2 (3 pts)</br>
+                    Exercise 3 (3 pts)</br>
+                    Exercise 4 (3 pts)</br>
+                    Exercise 5 (3 pts)</br>
+                    Exercise 6 (3 pts)</br>
+                    Exercise 7 (3 pts)</br>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </section> 
+<!--
+    <section class = "table">
+        <table>
+            <tbody>
+            <tr>
+                <td>
+                    <pre>
+#include 
+int main() {
+    FILE* input = fopen("id.dat", "r");
+    char student[8];
+    char program[4];
+    int grade;
+    while (!feof(input)) {
+       ...;
+        printf("someone from %s got %d\n", program, grade);
+    }
+    fclose(input);
+}
+                    </pre>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+    </section>
+-->
+
+<section>
+    <div class="container">
+        <h3>Exercise 1 </h3>
+        Provide an adequate expression to read data from a structured file (ending at a valid newline character) that first contains a valid UANL student ID number, then the abbreviation of the study program of the student, and then the grade as an integer between zero and one hundred, for example, "1234567 ITS 88".
+    </div>
+</section>
+
+
+
+<div class="scroll">
+    <code>
+        <pre>
+<span class="number">&nbsp1&nbsp</span><span class="include">#include</span> &ltstdio.h&gt
+<span class="number">&nbsp2&nbsp</span><span class="yellow">int</span> main() {
+<span class="number">&nbsp3&nbsp</span>    <span class="yellow">FILE*</span> input = <span class="blue">fopen</span>(<span class="orange">"id.dat"</span>, <span class="orange">"r"</span>);
+<span class="number">&nbsp4&nbsp</span>    <span class="yellow">char</span> student[8];
+<span class="number">&nbsp5&nbsp</span>    <span class="yellow">char</span> program[4];
+<span class="number">&nbsp6&nbsp</span>    <span class="yellow">int</span> grade;
+<span class="number">&nbsp7&nbsp</span>    <span class="aqua">while</span> (<span class="blue">!feof</span>(input)) {
+<span class="number">&nbsp8&nbsp</span>        ...;
+<span class="number">&nbsp9&nbsp</span>        <span class="blue">printf</span>(<span class="orange">"someone from %s got %d\n"</span>, program, grade);&nbsp&nbsp&nbsp
+<span class="number">10&nbsp</span>    }
+<span class="number">11&nbsp</span>    <span class="blue">fclose</span>(input);
+<span class="number">12&nbsp</span>}</pre></code>
+</div>
+</br>
+<section>
+    <div class="containerform">
+    <form action="mi_servidor" target="_blank" autocomplete="off">
+        <label for="nombre">Expresion:</label><br/>
+            <input size="40" type="text" id="nombre" name="nombre" 
+                required="true"/><br/><br/>
+        <input type="submit" value="Grade"/>
+    </form>
+    </div>
+
+</section>
+
+    <section>
+        <div class="updated">
+            <p>
+                Actualizado el 5 de junio del 2021. </br>
+                <a class="imtc" href="index.html">Ir al inicio de la pagina</a>
+            </p>
+            </br>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="contact">
+            <div class="item__contact">
+                <a class="link" href="https://github.com/rulgamer03">
+                <i class='socialmedia__icon bx bxl-github'></i>
+                </br>
+                <h3 class="contact__title">rulgamer03</h3>
+                </a>
+            </div>
+            <div class="item__contact">
+                <a class="link" href="mailto:angelraulch@gmail.com">
+                <i class='bx bx-mail-send' ></i>
+                <h3 class="contact__title">angelraulch@gmail.com</h3>
+                </a>
+            </div>
+            <div class="item__contact">
+                <a class="link" href="https://www.twitch.tv/rulgamer07"> 
+                <i class='bx bxl-twitch'></i>
+                <h3 class="contact__title">rulgamer07</h3>
+                </a>
+            </div>
+            <div class="item__contact">
+                <a class="link" href="https://twitter.com/angelraulchavez">
+                <i class='socialmedia__icon bx bxl-twitter'></i>
+                <h3 class="contact__title">God ruly</h3>
+                </a>
+            </div>
+        </div>
+    </footer>
+        
+</body>
+</html>
